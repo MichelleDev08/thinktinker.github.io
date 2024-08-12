@@ -27,13 +27,15 @@
     /* ******************************* */
 
     /* set the header styles */
-    .header{
+    header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px 20px 70px 70px;  /*top , right, bottom, left*/
         width: 80%;
         margin: auto;
+        border-bottom: 1px dashed rgb(0, 255, 255, 0.5); /* red, green, blue, opacity */
+        margin-bottom: 10px;
     }
 
     /* set the logo styles */
@@ -78,6 +80,8 @@
         margin: auto;
         width: 80%;
         height: 100dvh;
+        border-bottom: 1px ;
+        margin-bottom: 10px;
     }
 
     /* set the left div column */
@@ -133,8 +137,9 @@
     }
 
     /* set the profile text (targets span tags within <p> tags in profilecontainer class) */
-    .strong {
+    strong {
         font-weight: bold;
+        color: rgba(16, 204, 157, 0.5);
     }
 
     /* set the profile details' list */
@@ -200,11 +205,97 @@
 
     /* Start of styling projectsection */
     /* ******************************* */
+    #projectsection {
+        width: 80%;
+        margin: auto;
+        height: 100dvh;
+    }
 
-    /* Include the styles for projectsection here */
+    <!-- /* Set the showcasecontainer to list the projects, repeated in equal columns of 3s per fractional unit */ -->
+    .showcasecontainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+       /* Set the card background to white */
+       .projectcard {
+        font-size: small;
+        background-color: white;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding-bottom: 10px;
+    }
+
+      /* Set the projectsection grid container's content with a left padding */
+      .projectcard h4 {
+        padding-left: 16px;
+    }
+
+    .projectcard p {
+        padding-left: 24px;
+        font-size: .6rem;
+    }
+
+    /* Set the image in the project card */
+    .projectcard img {
+        display: block;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        height: 180px;
+        background-size: cover;
+        background-position-x: center; 
+        background-position-y: center;
+        background-repeat: no-repeat;  
+        background-image: url("img/imgplaceholder.png");
+        text-indent: -9999px; remove or comment out text if all images are not available
+        
+    }
+
+/* Set the projectcard title's style (set the text to be uppercase) */
+.projectcard .scope {
+        text-transform: uppercase;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    /* Set mouseover effect for project card */
+    .projectcard:hover {
+        transition: 0.45s ease-out;
+        transform: scale(1.05);
+    }
+    /* Set some layout for the span tag */
+    .projectcard span{
+        font-size: x-small;
+        align-content: space-between;
+        border-radius: 6px;
+        margin-right: 4px;
+        background-color: lightseagreen;
+        padding: 5px 10px;
+        color: white;
+        white-space: nowrap;
+    }
+
 
     /* ***************************** */
     /* End of styling projectsection */
+    /* Start of styling miscellaneous elements */
+    /* *************************************** */
+
+    .top{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top a{
+        margin-top: 20px;
+        text-decoration: none;
+        color: lightseagreen;
+        font-size: small;
+    }
 
 </style>
 </head>
@@ -212,16 +303,16 @@
 
     <!-- Start of header -->
     <a name="top"></a>       
-    <div class="header">
+    <header>
         <div class="logo"><!-- Un-comment the line here to add a logo --></div>
         <nav>
             <ul>
-                <li><a href="#top">Home.</a></li>
-                <li><a href="#projects">Projects.</a></li>
-                <li><a href="#contact">Let's talk.</a></li>
+                <li><a href="#top">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-    </div>
+    </header>
     <!-- End of header -->
 
 
@@ -232,7 +323,7 @@
             <div class="profilecontainer">
                 <img src="img/alex.png" alt="alex" class="rounded-image">
                 <p>
-                    <span class="strong">&lt;Your Name Here&gt;</span>
+                    <strong>Michelle ZHANG</strong>
                     <span>Full-stack Developer</span>
                 </p>
             </div>
@@ -272,27 +363,86 @@
     </section>
     <!-- End of mainsection -->
 
-
+    
     <!-- Start of project section, uses grids -->
     <a name="projects"></a>    
     <section id="projectsection">
-
+      
         <div class="sectiontitle">Projects</div>
         <div class="showcasecontainer">
 
             <!-- Project card Template -->
             <div class="projectcard">
                 <a href="#">
-                    <img src="" alt="Add a description here">
-                    Project name
-                    <h4>Add Project Name</h4>
-                    <p class="scope">Add Scope (e.g. JavaScript)</p>
-                    <p>Add tag(s) (e.g. User Interaction)</p>
+                    <img src="img/web-design.jpg" alt="Add a description here">
+                    <!-- Project name -->
+                    <h4>Community Web Portal Design</h4>
+                    <p class="scope">Web Page Design</p>
+                    <p><span>UI/UX</span><span>HTML</span><span>CSS</span></p>
                 </a>
             </div>
 
-        </div>
+        
+         <!-- Project card #2 -->
+    <div class="projectcard">
+        <a href="#">
+            <img src="img/mobile-app.jpg" alt="Add a description here">
+            <!-- Project name -->
+            <h4>Expense Calculator Web App</h4>
+            <p class="scope">JavaScript Development</p>
+            <p><span>User Interaction</span><span>Application Logic</span></p>
+        </a>
+    </div>
+    
+        <!-- Project card #3 -->
+    <div class="projectcard">
+        <a href="#">
+            <img src="img/data-tracking.jpg" alt="Add a description here">
+            <!-- Project name -->
+            <h4>Enrollment Tracker</h4>
+            <p class="scope">Database Design</p>
+            <p><span>SQL</span><span>Data Analysis</span></p>
+        </a>
+    </div>
 
+        <!-- Project card #4 -->
+    <div class="projectcard">
+        <a href="#">
+            <img src="img/chess.jpg" alt="Add a description here">
+            <!-- Project name -->
+            <h4>Chess Game</h4>
+            <p class="scope">Java</p>
+            <p><span>Game Development</span></p>
+        </a>
+    </div>
+
+       <!-- Project card #5 -->
+    <div class="projectcard">
+        <a href="#">
+            <img src="img/fitness-tracking.jpg" alt="Add a description here">
+            <!-- Project name -->
+            <h4>Fitness Tracker</h4>
+            <p class="scope">App Development</p>
+            <p><span>SwiftUI</span><span>Swift Programming</span></p>
+        </a>
+    </div>
+    <!-- Project card #6 -->
+    <div class="projectcard">
+        <a href="#">
+            <img src="img/photography.jpg" alt="Add a description here">
+            <!-- Project name -->
+            <h4>SG Arts Award</h4>
+            <p class="scope">Photography</p>
+            <p><span>Creative</span><span>Competition</span></p>
+        </a>
+    </div>
+    </div>
+    <!-- Add within `projectsection` the below for users to go to the top of the page: -->
+
+    
+    <div class="top">
+        <a href="#top">&#x25B2; Back to Top</a>
+    </div>
     </section>
     <!-- End of project section -->
 
