@@ -106,7 +106,7 @@
         padding-bottom: 24px;
     }
 
-    /* Set the projectsection grid container's content with a left padding */
+    /* Set the projectsection grid container's content with a left padding */us
     .projectcard h4, .projectcard p {
         padding-left: 16px;
     }
